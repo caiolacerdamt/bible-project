@@ -1,0 +1,204 @@
+#pagina-principal {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    gap: 20px;
+    padding: 32px;
+    letter-spacing: 3px;
+}
+
+.left {
+    width: 415px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.boas-vindas {
+    height: 80px;
+    border-radius: 10px;
+    background: whitesmoke;
+}
+
+.boas-vindas h1 {
+    text-align: center;
+    line-height: 50px;
+}
+
+.salvos {
+    width: 100%;
+    height: 890px;
+    border-radius: 10px;
+    padding: 5px;
+    background: whitesmoke;
+}
+
+.salvos h2 {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.versiculos-salvos {
+    height: 480px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    overflow: auto;
+}
+
+.versiculo-salvo {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.versiculo-salvo p {
+    font-size: 16px;
+}
+
+.versiculos-salvos button {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: none;
+}
+
+i.fa-solid.fa-trash {
+    font-size: 24px;
+    color: black;
+}
+
+.right {
+    width: 950px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.versiculo-do-dia {
+    padding: 10px;
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    background: whitesmoke;
+}
+
+.buscar-palavra {
+    height: 675px;
+    border-radius: 10px;
+    padding: 10px;
+    background: whitesmoke;
+}
+
+.input-lupa {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+input#palavra {
+    width: 760px;
+    height: 40px;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 2px;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+button#lupa {
+    width: 70px;
+    height: 40px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.fa-magnifying-glass {
+    font-size: 24px;
+}
+
+.buscar-palavra h1 {
+    text-align: center;
+    padding: 10px;
+}
+
+.resultado-da-busca {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 320px;
+    overflow: auto;
+}
+
+.result {
+    display: flex;
+    gap: 20px;
+}
+
+p.paragrafo {
+    width: 760px;
+    height: 100%;
+}
+
+button.salvar {
+    width: 70px;
+    height: 40px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+ .fa-bookmark {
+    font-size: 24px;
+}
+
+.notificacao {
+    width: 300px;
+    position: fixed;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(60, 42, 33, 0.9);
+    border-radius: 10px;
+    font-size: 24px;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+
+.loading-animation {
+    display: block;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3C2A21;
+    animation: spin 2s linear infinite;
+}
+
+.loading-animation.active {
+    display: block;
+}
+
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
