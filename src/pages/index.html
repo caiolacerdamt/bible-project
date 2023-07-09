@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/e8fbb395d8.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <section id="pagina-principal">
+        <div class="left">
+          <div class="boas-vindas">
+            <h1>Olá,<span>Caio</span></h1>
+          </div>
+          <div class="salvos">
+            <h2>Versículos Salvos</h2>
+            <div class="versiculos-salvos">
+              <!--<button id="botao-excluir"><i class="fa-solid fa-x"></i></button>-->
+            </div>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="versiculo-do-dia">
+            <h1>Versículo do Dia</h1>
+            <p id="versiculo-do-dia"></p>
+          </div>
+          <div class="buscar-palavra">
+            <div class="input-lupa">
+              <input
+                type="text"
+                name="palavra"
+                id="palavra"
+                placeholder="Digite alguma palavra"
+              />
+              <button id="lupa">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+            <h1>Resultado da busca</h1>
+            <div class="resultado-da-busca"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="../js/buscaVersiculo.js"></script>
+    <script src="../js/versiculoDiario.js"></script>
+  </body>
+</html>
