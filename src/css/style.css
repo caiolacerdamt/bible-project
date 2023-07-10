@@ -345,4 +345,8 @@ button.salvar {
         height: 405px;
     }
 
+    .resultado-da-busca {
+        height: 260px;
+    }
+
 }

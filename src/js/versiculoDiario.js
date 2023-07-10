@@ -14,7 +14,7 @@ async function getVersiculoAleatorio() {
     const hora = agora.getHours();
     const minutos = agora.getMinutes();
     
-    if ( hora === 18 && minutos === 32) {
+    if ( hora === 13 && minutos === 47) {
       getVersiculoAleatorio().then(data => {
         localStorage.setItem('versiculo', data.text);
         localStorage.setItem('livro', data.book.name)
