@@ -351,7 +351,11 @@ button.salvar {
     }
 
     .salvos {
-        height: 525px;
+        height: auto;
+    }
+
+    .salvos p {
+        width: 100%;
     }
 
     .salvos h2 {
