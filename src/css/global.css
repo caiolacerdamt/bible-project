@@ -6,64 +6,34 @@
 }
 
 body {
-
-        background-color: #A7D3A6;
-        /*background: linear-gradient(80deg, #1A120B, #3C2A21, #D5CEA3);
-        background-size: 600% 600%;
-    
-        -webkit-animation: BackgroundAnimation 10s ease infinite;
-        -moz-animation: BackgroundAnimation 10s ease infinite;
-        animation: BackgroundAnimation 10s ease infinite;
-    }
-    
-    @-webkit-keyframes BackgroundAnimation {
-        0%{background-position:0% 37%}
-        50%{background-position:100% 64%}
-        100%{background-position:0% 37%}
-    }
-    @-moz-keyframes BackgroundAnimation {
-        0%{background-position:0% 37%}
-        50%{background-position:100% 64%}
-        100%{background-position:0% 37%}
-    }
-    @keyframes BackgroundAnimation {
-        0%{background-position:0% 37%}
-        50%{background-position:100% 64%}
-        100%{background-position:0% 37%}*/
+        background-color: var(--bg-color);
     }
 
     p {
         font-size: 20px;
-        color: #285230;
+        color: var(--p-color);
         font-weight: bold
     }
 
-    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
-
-    @font-face {
-        font-family: Aloevera;
-        src: url(../fonts/Aloevera-OVoWO.ttf);
-    }
-
-
 ::-webkit-scrollbar {
     width: 10px; 
-    background-color: #f5f5f5; 
+    background-color: var(--divs-color); 
   }
   
   ::-webkit-scrollbar-track {
-    background-color: #f5f5f5; 
+    background-color: var(--divs-color); 
   }
   
  
   ::-webkit-scrollbar-thumb {
-    background-color: #285230; 
+    background-color: var(--p-color); 
     border-radius: 5px; 
   }
 :root {
-    --font-primaria: 'Ubuntu' sans-serif;
-    --font-sec: 'Aloevera'
-
+    --bg-color: #A7D3A6;
+    --p-color: #285230;
+    --titles-color: #5E463C;
+    --divs-color: #fff;
 }
 
 
