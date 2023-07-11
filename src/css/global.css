@@ -2,11 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--font-primaria);
+    font-family: 'Garamond'
 }
 
 body {
-        background: linear-gradient(80deg, #1A120B, #3C2A21, #D5CEA3);
+
+        background-color: #A7D3A6;
+        /*background: linear-gradient(80deg, #1A120B, #3C2A21, #D5CEA3);
         background-size: 600% 600%;
     
         -webkit-animation: BackgroundAnimation 10s ease infinite;
@@ -27,11 +29,13 @@ body {
     @keyframes BackgroundAnimation {
         0%{background-position:0% 37%}
         50%{background-position:100% 64%}
-        100%{background-position:0% 37%}
+        100%{background-position:0% 37%}*/
     }
 
     p {
         font-size: 20px;
+        color: #285230;
+        font-weight: bold
     }
 
     @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
@@ -53,7 +57,7 @@ body {
   
  
   ::-webkit-scrollbar-thumb {
-    background-color: #1A120B; 
+    background-color: #285230; 
     border-radius: 5px; 
   }
 :root {

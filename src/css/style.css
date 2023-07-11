@@ -18,10 +18,11 @@
 .boas-vindas {
     height: 80px;
     border-radius: 10px;
-    background: whitesmoke;
+    background: #FFFFFF;
 }
 
 .boas-vindas h1 {
+    color: #5E463C;
     text-align: center;
     line-height: 50px;
 }
@@ -31,10 +32,11 @@
     height: 890px;
     border-radius: 10px;
     padding: 5px;
-    background: whitesmoke;
+    background: #FFFFFF;
 }
 
 .salvos h2 {
+    color: #5E463C;
     text-align: center;
     padding-bottom: 10px;
 }
@@ -55,20 +57,17 @@
     align-items: center;
 }
 
-.versiculo-salvo p {
-    font-size: 16px;
-}
-
 .versiculos-salvos button {
     width: 30px;
     height: 30px;
     cursor: pointer;
     border: none;
+    background: none;
 }
 
 i.fa-solid.fa-trash {
     font-size: 24px;
-    color: black;
+    color: #285230;
 }
 
 .right {
@@ -87,14 +86,18 @@ i.fa-solid.fa-trash {
     gap: 10px;
     justify-content: center;
     align-items: center;
-    background: whitesmoke;
+    background: #FFFFFF;
+}
+
+.versiculo-do-dia h1 {
+    color: #5E463C;
 }
 
 .buscar-palavra {
     height: 675px;
     border-radius: 10px;
     padding: 10px;
-    background: whitesmoke;
+    background: #FFFFFF;
 }
 
 .input-lupa {
@@ -123,9 +126,11 @@ button#lupa {
 
 .fa-magnifying-glass {
     font-size: 24px;
+    color: #285230;
 }
 
 .buscar-palavra h1 {
+    color: #5E463C;
     text-align: center;
     padding: 10px;
 }
@@ -158,6 +163,7 @@ button.salvar {
 
  .fa-bookmark {
     font-size: 24px;
+    color: #285230;
 }
 
 .notificacao {
@@ -166,10 +172,10 @@ button.salvar {
     top: 7%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(60, 42, 33, 0.9);
+    background-color: #fff;
     border-radius: 10px;
     font-size: 24px;
-    color: #fff;
+    color: #285230;
     padding: 10px;
     text-align: center;
   }
@@ -184,7 +190,7 @@ button.salvar {
     height: 40px;
     border-radius: 50px;
     border: 4px solid #f3f3f3;
-    border-top: 4px solid #3C2A21;
+    border-top: 4px solid #285230;
     animation: spin 2s linear infinite;
 }
 
