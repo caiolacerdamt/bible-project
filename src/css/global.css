@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Garamond'
+    font-family: var(--font-primaria)
 }
 
 body {
@@ -29,11 +29,15 @@ body {
     background-color: var(--p-color); 
     border-radius: 5px; 
   }
+
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
 :root {
-    --bg-color: #A7D3A6;
-    --p-color: #285230;
-    --titles-color: #5E463C;
-    --divs-color: #fff;
+    --bg-color:  #AA8B56;
+    --p-color:  #F0EBCE;
+    --titles-color: #F0EBCE;
+    --divs-color: #395144;
+    --font-primaria: 'Raleway', sans-serif;
 }
 
 

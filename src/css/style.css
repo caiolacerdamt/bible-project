@@ -114,6 +114,16 @@ input#palavra {
     padding: 2px;
     font-size: 16px;
     letter-spacing: 2px;
+    background-color: var(--p-color);
+}
+
+input#palavra::placeholder {
+    letter-spacing: 4px;
+    color: var(--divs-color);
+}
+
+input[type="text"] {
+    color: var(--divs-color);
 }
 
 button#lupa {
@@ -190,7 +200,7 @@ button.salvar {
     height: 40px;
     border-radius: 50px;
     border: 4px solid var(--divs-color);
-    border-top: 4px solid #285230;
+    border-top: 4px solid var(--p-color);
     animation: spin 2s linear infinite;
 }
 
@@ -327,12 +337,17 @@ button.salvar {
 
 @media (min-width: 1023px) {
 
+    #pagina-principal {
+        height: 100%;
+        flex-direction: column;
+    }
+
     .left {
-        width: 600px;
+        width: 100%;
     }
 
     .right {
-        width: 750px;
+        width: 100%;
     }
 
     .salvos {
@@ -352,7 +367,16 @@ button.salvar {
     }
 
     .resultado-da-busca {
+        width: 100%;
         height: 260px;
+    }
+
+    .resultado-da-busca p {
+        width: 100%;
+    }
+
+    .result {
+        width: 100%;
     }
 
 }
