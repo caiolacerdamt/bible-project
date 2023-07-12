@@ -248,6 +248,7 @@ button.salvar {
 
     .versiculo-do-dia {
         width: 100%;
+        height: auto;
     }
 
     .buscar-palavra {
