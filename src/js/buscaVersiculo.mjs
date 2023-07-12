@@ -1,15 +1,16 @@
 import token from '../../environment.mjs';
 
-
 const resultadoDaBusca = document.querySelector(".resultado-da-busca");
 const searchBtn = document.querySelector("#lupa");
 const inputBusca = document.querySelector("#palavra");
-const versiculosSalvos = document.querySelector('.versiculos-salvos')
+const versiculosSalvos = document.querySelector('.versiculos-salvos');
 
 async function buscaVersiculo() {
   try {
     if (inputBusca.value) {
       resultadoDaBusca.innerHTML = `<div class="loading-animation"></div>`;
+
+      const termoBuscado = inputBusca.value.toLowerCase();
 
       const url = await fetch(
         "https://www.abibliadigital.com.br/api/verses/search",
@@ -17,11 +18,11 @@ async function buscaVersiculo() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${token}`
+            Authorization: `Bearer ${token}`,
           },
           body: JSON.stringify({
             version: "nvi",
-            search: inputBusca.value,
+            search: inputBusca.value.toLowerCase(),
           }),
         }
       );
@@ -30,22 +31,27 @@ async function buscaVersiculo() {
 
       const verses = data.verses;
       console.log(verses);
-      const texts = await verses.map((obj) => {
-        return `<div class="result"><p class="paragrafo">${obj.text} ${obj.book.name} ${obj.chapter}:${obj.number}</p> 
-      <button class="salvar"><i class="fa-solid fa-bookmark"></i></button></div>`;
-      });
+      const results = verses
+        .map((obj) => {
+          const textoFormatado = obj.text.replace(
+            new RegExp(termoBuscado, "gi"),
+            (match) => `<span class="highlight">${match}</span>`
+          );
 
-      console.log(texts);
-
-      const results = texts.join("\n");
+          return `<div class="result"><p class="paragrafo">${textoFormatado} ${obj.book.name} ${obj.chapter}:${obj.number}</p> 
+            <button class="salvar"><i class="fa-solid fa-bookmark"></i></button></div>`;
+        })
+        .join("");
 
       const resultadoContainer = document.createElement("div");
       resultadoContainer.classList.add("resultado-da-busca");
       resultadoContainer.innerHTML = results;
 
-      resultadoContainer.querySelectorAll(".salvar").forEach((button) => {
-        button.addEventListener("click", salvarVersiculo);
-      });
+      resultadoContainer
+        .querySelectorAll(".salvar")
+        .forEach((button) => {
+          button.addEventListener("click", salvarVersiculo);
+        });
 
       resultadoDaBusca.appendChild(resultadoContainer);
 
@@ -61,27 +67,28 @@ async function buscaVersiculo() {
 }
 
 function notificacao(message) {
-  const notificacao = document.createElement('div')
-  notificacao.classList.add('notificacao')
-  notificacao.textContent = message
-  document.body.appendChild(notificacao)
+  const notificacao = document.createElement("div");
+  notificacao.classList.add("notificacao");
+  notificacao.textContent = message;
+  document.body.appendChild(notificacao);
 
   setTimeout(() => {
-    notificacao.remove()
-  }, 3000)
+    notificacao.remove();
+  }, 3000);
 }
 
 function salvarVersiculo(event) {
   const divResult = event.target.closest(".result");
   const text = divResult.querySelector(".paragrafo").textContent;
 
-  const savedVersiculos = JSON.parse(localStorage.getItem("versiculos")) || [];
+  const savedVersiculos =
+    JSON.parse(localStorage.getItem("versiculos")) || [];
 
-  if(savedVersiculos.includes(text)) {
-    notificacao('Esse versículo já foi salvo')
-    return
+  if (savedVersiculos.includes(text)) {
+    notificacao("Esse versículo já foi salvo");
+    return;
   } else {
-    notificacao('Versículo Salvo')
+    notificacao("Versículo Salvo");
   }
 
   savedVersiculos.push(text);
@@ -90,50 +97,51 @@ function salvarVersiculo(event) {
 
   console.log("Versículo salvo:", text);
 
-  exibirVersiculosSalvos()
+  exibirVersiculosSalvos();
 }
 
 searchBtn.addEventListener("click", buscaVersiculo);
 
 function exibirVersiculosSalvos() {
-  const versiculosLocalStorage = JSON.parse(localStorage.getItem('versiculos')) || []
-  versiculosSalvos.innerHTML = ''
+  const versiculosLocalStorage =
+    JSON.parse(localStorage.getItem("versiculos")) || [];
+  versiculosSalvos.innerHTML = "";
 
   versiculosLocalStorage.forEach((versiculo, index) => {
-    const versiculoDiv = document.createElement('div')
-    versiculoDiv.classList.add('versiculo-salvo')
+    const versiculoDiv = document.createElement("div");
+    versiculoDiv.classList.add("versiculo-salvo");
 
-    const conteudoVersiculo = document.createElement('p')
-    conteudoVersiculo.textContent = versiculo
-    versiculoDiv.appendChild(conteudoVersiculo)
+    const conteudoVersiculo = document.createElement("p");
+    conteudoVersiculo.textContent = versiculo;
+    versiculoDiv.appendChild(conteudoVersiculo);
 
-    const botaoExcluir = document.createElement('button')
-    botaoExcluir.setAttribute('data-index', index)
+    const botaoExcluir = document.createElement("button");
+    botaoExcluir.setAttribute("data-index", index);
 
-    const iconeExcluir = document.createElement('i')
-    iconeExcluir.classList.add('fa-solid')
-    iconeExcluir.classList.add('fa-trash')
-    botaoExcluir.appendChild(iconeExcluir)
+    const iconeExcluir = document.createElement("i");
+    iconeExcluir.classList.add("fa-solid");
+    iconeExcluir.classList.add("fa-trash");
+    botaoExcluir.appendChild(iconeExcluir);
 
-    botaoExcluir.addEventListener('click', () => {
-      excluirVersiculo(index)
-      notificacao('Versículo Excluído')
-    })
-    
-    versiculoDiv.appendChild(botaoExcluir)
-    versiculosSalvos.appendChild(versiculoDiv)
+    botaoExcluir.addEventListener("click", () => {
+      excluirVersiculo(index);
+      notificacao("Versículo Excluído");
+    });
 
-  })
+    versiculoDiv.appendChild(botaoExcluir);
+    versiculosSalvos.appendChild(versiculoDiv);
+  });
 }
 
 function excluirVersiculo(index) {
-  const savedVersiculos = JSON.parse(localStorage.getItem('versiculos')) || []
+  const savedVersiculos =
+    JSON.parse(localStorage.getItem("versiculos")) || [];
 
-  savedVersiculos.splice(index, 1)
+  savedVersiculos.splice(index, 1);
 
-  localStorage.setItem('versiculos', JSON.stringify(savedVersiculos))
+  localStorage.setItem("versiculos", JSON.stringify(savedVersiculos));
 
-  exibirVersiculosSalvos()
+  exibirVersiculosSalvos();
 }
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -158,6 +158,11 @@ button#lupa {
     gap: 20px;
 }
 
+.highlight {
+    background-color: var(--bg-color);
+    font-weight: bold;
+  }
+
 p.paragrafo {
     width: 760px;
     height: 100%;
