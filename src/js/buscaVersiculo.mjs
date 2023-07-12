@@ -29,6 +29,7 @@ async function buscaVersiculo() {
       const data = await url.json();
       console.log(data);
 
+      
       const verses = data.verses;
       console.log(verses);
       const results = verses
