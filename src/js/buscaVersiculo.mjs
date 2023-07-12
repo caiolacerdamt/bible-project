@@ -1,4 +1,5 @@
-import token from '../../environment.mjs';
+require('dotenv').config()
+const APItoken = process.env.APItoken
 
 const resultadoDaBusca = document.querySelector(".resultado-da-busca");
 const searchBtn = document.querySelector("#lupa");
@@ -18,7 +19,7 @@ async function buscaVersiculo() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${APItoken}`,
           },
           body: JSON.stringify({
             version: "nvi",
