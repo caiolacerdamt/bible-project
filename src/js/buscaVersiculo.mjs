@@ -1,3 +1,6 @@
+import token from '../../environment.mjs';
+
+
 const resultadoDaBusca = document.querySelector(".resultado-da-busca");
 const searchBtn = document.querySelector("#lupa");
 const inputBusca = document.querySelector("#palavra");
@@ -9,11 +12,12 @@ async function buscaVersiculo() {
       resultadoDaBusca.innerHTML = `<div class="loading-animation"></div>`;
 
       const url = await fetch(
-        "http://localhost:3000/api/busca-versiculo",
+        "https://www.abibliadigital.com.br/api/verses/search",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
           },
           body: JSON.stringify({
             version: "nvi",
