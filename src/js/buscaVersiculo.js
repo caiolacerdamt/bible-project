@@ -1,7 +1,3 @@
-require("dotenv").config()
-
-const APItoken = process.env.APItoken;
-
 const resultadoDaBusca = document.querySelector(".resultado-da-busca");
 const searchBtn = document.querySelector("#lupa");
 const inputBusca = document.querySelector("#palavra");
@@ -13,12 +9,11 @@ async function buscaVersiculo() {
       resultadoDaBusca.innerHTML = `<div class="loading-animation"></div>`;
 
       const url = await fetch(
-        "https://www.abibliadigital.com.br/api/verses/search",
+        "http://localhost:3000/api/busca-versiculo",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            'Authorization': `Bearer ${APItoken}`,
           },
           body: JSON.stringify({
             version: "nvi",
