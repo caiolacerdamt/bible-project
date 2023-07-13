@@ -30,6 +30,9 @@ async function buscaVersiculo() {
       const data = await url.json();
       console.log(data);
 
+      if (data.verses.length === 0) {
+        resultadoDaBusca.innerHTML = `<div class="erro">Erro ao buscar a palavra, a palavra não existe.</div>`;
+      }
       
       const verses = data.verses;
       console.log(verses);
@@ -65,6 +68,7 @@ async function buscaVersiculo() {
     }
   } catch (error) {
     console.log(error);
+    resultadoDaBusca.innerHTML = `<div class="erro">Erro ao buscar a palavra, tente novamente mais tarde.</div>`
   }
 }
 

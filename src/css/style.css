@@ -181,6 +181,16 @@ button.salvar {
     color: var(--p-color);
 }
 
+.erro {
+    font-size: 24px;
+    color: var(--titles-color);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
 .notificacao {
     width: 300px;
     position: fixed;
