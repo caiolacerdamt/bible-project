@@ -38,7 +38,7 @@ async function getVersiculoAleatorio() {
       localStorage.setItem('livro', data.book.name)
       localStorage.setItem('capitulo', data.chapter)
       localStorage.setItem('numero', data.number)
-      atualizarVersiculo(data);
+      atualizarVersiculo(data.text, data.book.name, data.chapter, data.number);
     });
   }
   
