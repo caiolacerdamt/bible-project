@@ -1,8 +1,8 @@
 #pagina-principal {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
-    gap: 20px;
+    gap: 10px;
     padding: 32px;
     letter-spacing: 3px;
 }
@@ -16,7 +16,7 @@
 }
 
 .boas-vindas {
-    height: 80px;
+    height: 50px;
     border-radius: 10px;
     background: var(--divs-color);
 }
@@ -79,7 +79,7 @@ i.fa-solid.fa-trash {
 
 .versiculo-do-dia {
     padding: 10px;
-    height: 200px;
+    height: auto;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -254,11 +254,12 @@ button.salvar {
     }
     
     .salvos {
-        height: auto;
+        max-height: 400px;
+        overflow: auto;
     }
 
     .versiculos-salvos {
-        height: 550px;
+        height: auto;
     }
 
     .versiculo-do-dia {
@@ -267,11 +268,13 @@ button.salvar {
     }
 
     .buscar-palavra {
-        height: auto;
+        max-height: 300px;
+        overflow: auto;
     }
 
     .resultado-da-busca {
-        height: 330px;
+        width: 100%;
+        height: auto;
     }
 
 }
@@ -298,11 +301,12 @@ button.salvar {
     }
 
     .salvos {
-        height: auto;
+        max-height: 400px;
+        overflow: auto;
     }
 
     .versiculos-salvos {
-        height: 500px;
+        height: auto;
         overflow: auto;
     }
 
@@ -310,8 +314,14 @@ button.salvar {
         width: 100%;
     }
 
+    .buscar-palavra {
+        max-height: 300px;
+        overflow: auto;
+    }
+
     .resultado-da-busca {
-        height: 500px;
+        width: 100%;
+        height: auto;
     }
 
 }
@@ -338,6 +348,11 @@ button.salvar {
     }
 
     .salvos {
+        max-height: 400px;
+        overflow: auto;
+    }
+
+    .versiculos-salvos {
         height: auto;
     }
 
@@ -345,8 +360,14 @@ button.salvar {
         width: 100%;
     }
 
+    .buscar-palavra {
+        max-height: 400px;
+        overflow: auto;
+    }
+
     .resultado-da-busca {
-        height: 500px;
+        width: 100%;
+        height: auto;
     }
 
 }
@@ -367,7 +388,8 @@ button.salvar {
     }
 
     .salvos {
-        height: auto;
+        max-height: 400px;
+        overflow: auto;
     }
 
     .salvos p {
@@ -379,24 +401,24 @@ button.salvar {
     }
 
     .versiculos-salvos {
-        height: 400px;
+        height: auto;
     }
 
     .buscar-palavra {
-        height: 600px;
+        max-height: 400px;
+        overflow: auto;
     }
 
     .resultado-da-busca {
         width: 100%;
-        height: 430px;
+        height: auto;
     }
 
     .resultado-da-busca p {
         width: 100%;
+        height: auto
     }
 
-    .result {
-        width: 100%;
-    }
+
 
 }
