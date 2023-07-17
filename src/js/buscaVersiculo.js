@@ -1,5 +1,5 @@
 
-import { APItoken } from './token.js'
+// import { APItoken } from './token.js'
 
 // require('dotenv').config()
 // const APItoken = process.env.APItoken
@@ -36,7 +36,7 @@ async function buscaVersiculo() {
       if (data.verses.length === 0) {
         resultadoDaBusca.innerHTML = `<div class="erro">Erro ao buscar a palavra, a palavra não existe.</div>`;
       }
-      
+
       const verses = data.verses;
       console.log(verses);
       const results = verses
@@ -46,7 +46,7 @@ async function buscaVersiculo() {
             (match) => `<span class="highlight">${match}</span>`
           );
 
-          return `<div class="result"><p class="paragrafo">${textoFormatado} ${obj.book.name} ${obj.chapter}:${obj.number}</p> 
+          return `<div class="result"><p class="paragrafo">${textoFormatado} ${obj.book.name} ${obj.chapter}:${obj.number}</p>
             <button class="salvar"><i class="fa-solid fa-bookmark"></i></button></div>`;
         })
         .join("");
