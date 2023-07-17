@@ -1,5 +1,4 @@
-require('dotenv').config()
-const APItoken = process.env.APItoken
+import { APItoken } from './token.js'
 
 const resultadoDaBusca = document.querySelector(".resultado-da-busca");
 const searchBtn = document.querySelector("#lupa");
